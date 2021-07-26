@@ -1,15 +1,20 @@
 import core.SuperClass;
 import org.junit.Test;
-import pageObject.SiberianHealthPage;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class SiberianWellnessProductBasketTest extends SuperClass {
-   @Test
+
+    public static final String EXPECTED_NUMBER_OF_PRODUCTS_RESULT = "1";
+
+    @Test
     public void siberianWellnessProductBasketTest(){
-       siberianHealthPage.getBrowser();
+       siberianHealthPage.openSite();
        siberianHealthPage.goToBeautySection();
        beautySectionPage.scrollToProducts();
        beautySectionPage.addFirstProductAndSwitchToBasket();
-       productBasketPage.checkProductAvailability();
-      System.out.println();
+       assertEquals(EXPECTED_NUMBER_OF_PRODUCTS_RESULT, productBasketPage.getProductNumber());
+       assertTrue(productBasketPage.isProductsInTheBasketPresent());
    }
 }

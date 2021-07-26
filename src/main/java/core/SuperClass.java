@@ -32,7 +32,6 @@ public class SuperClass {
 
     @After
     public void quiteDriver() {
-
         driver.quit();
     }
 }

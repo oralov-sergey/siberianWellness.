@@ -6,9 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ActionsOnThePage extends SuperClass {
-    public static void getBrowser(String URL) {
+import java.util.List;
 
+public class ActionsOnThePage extends SuperClass {
+
+    public static void getBrowser(String URL) {
         driver.get(URL);
     }
 
@@ -25,23 +27,18 @@ public class ActionsOnThePage extends SuperClass {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
-    public static String getText(String xpath){
-       return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath))).getText();
+    public static String getText(String xpath) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath))).getText();
 
     }
 
-    public static void checkNumber(String expectedNumber){
-        Integer number = Integer.valueOf(expectedNumber);
-        if (number > 0) {
-            System.out.println("Product basket is not empty.");
-        } else {
-            System.out.println("Error. PRODUCT BASKET IS EMPTY!");
-        }
-    }
-
-    public static void waitPresenceOfElement(String xpath){
+    public static void waitPresenceOfElement(String xpath) {
         WebDriverWait item = new WebDriverWait(driver, 30);
         item.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
     }
 
+    public static Boolean presenceOfElements(String xpath){
+        List<WebElement> products = driver.findElements(By.xpath(xpath));
+        return products.size() > 0;
+    }
 }

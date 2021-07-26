@@ -4,6 +4,8 @@ import core.ActionsOnThePage;
 import core.SuperClass;
 import io.qameta.allure.Step;
 
+import static core.ActionsOnThePage.*;
+
 public class BeautySectionPage extends SuperClass {
 
     public static final String FIRST_PRODUCT_XPATH = "//a[@class='rr-item__info rr-item__title']";
@@ -12,16 +14,16 @@ public class BeautySectionPage extends SuperClass {
 
    @Step("Scroll to products")
     public void scrollToProducts(){
-       ActionsOnThePage.waitPresenceOfElement(FIRST_PRODUCT_XPATH);
-       ActionsOnThePage.scrollIntoView(FIRST_PRODUCT_XPATH);
+       waitPresenceOfElement(FIRST_PRODUCT_XPATH);
+       scrollIntoView(FIRST_PRODUCT_XPATH);
     }
 
     @Step("Add product and switch to product basket")
     public void addFirstProductAndSwitchToBasket(){
-       ActionsOnThePage.waitElementAndClick(FIRST_PRODUCT_XPATH);
-       ActionsOnThePage.waitElementAndClick(ADD_PRODUCT_BUTTON_XPATH);
-       ActionsOnThePage.scrollIntoView(PRODUCT_BASKET_LINK_XPATH);
-       ActionsOnThePage.waitElementAndClick(PRODUCT_BASKET_LINK_XPATH);
+        waitElementAndClick(FIRST_PRODUCT_XPATH);
+        waitElementAndClick(ADD_PRODUCT_BUTTON_XPATH);
+        scrollIntoView(PRODUCT_BASKET_LINK_XPATH);
+        waitElementAndClick(PRODUCT_BASKET_LINK_XPATH);
     }
 
 }
