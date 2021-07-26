@@ -14,10 +14,6 @@ public class ActionsOnThePage extends SuperClass {
         driver.get(URL);
     }
 
-    public static void waitElementAndSendKeys(String xpath, String text) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath))).sendKeys(text);
-    }
-
     public static void waitElementAndClick(String xpath) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath))).click();
     }
@@ -29,7 +25,6 @@ public class ActionsOnThePage extends SuperClass {
 
     public static String getText(String xpath) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath))).getText();
-
     }
 
     public static void waitPresenceOfElement(String xpath) {
@@ -37,7 +32,7 @@ public class ActionsOnThePage extends SuperClass {
         item.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
     }
 
-    public static Boolean presenceOfElements(String xpath){
+    public static Boolean presenceOfElements(String xpath) {
         List<WebElement> products = driver.findElements(By.xpath(xpath));
         return products.size() > 0;
     }

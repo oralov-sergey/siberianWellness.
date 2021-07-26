@@ -1,4 +1,5 @@
 package pageObject;
+
 import core.SuperClass;
 import io.qameta.allure.Step;
 
@@ -11,12 +12,12 @@ public class ProductBasketPage extends SuperClass {
     public static final String LIST_OF_PRODUCTS_IN_THE_BASKET_XPATH = "//div[@class='os-order-page__content']";
 
     @Step("Get number of products")
-    public String getProductNumber(){
-       return getText(NUMBER_OF_PRODUCTS_TEXT_XPATH);
+    public String getProductNumber() {
+        return getText(NUMBER_OF_PRODUCTS_TEXT_XPATH);
     }
 
     @Step("Get presence of products")
-    public Boolean isProductsInTheBasketPresent(){
-      return presenceOfElements(LIST_OF_PRODUCTS_IN_THE_BASKET_XPATH);
+    public Boolean isProductsInTheBasketPresent() {
+        return presenceOfElements(LIST_OF_PRODUCTS_IN_THE_BASKET_XPATH);
     }
-  }
+}

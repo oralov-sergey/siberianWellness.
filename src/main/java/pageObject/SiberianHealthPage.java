@@ -1,6 +1,5 @@
 package pageObject;
 
-import core.ActionsOnThePage;
 import core.SuperClass;
 import io.qameta.allure.Step;
 
@@ -19,7 +18,7 @@ public class SiberianHealthPage extends SuperClass {
     }
 
     @Step("Go to beauty section")
-    public void goToBeautySection(){
+    public void goToBeautySection() {
         waitElementAndClick(EXPECTED_MESSAGE_CLOSE_BUTTON_XPATH);
         waitElementAndClick(BEAUTY_SECTION_LINK_XPATH);
     }
