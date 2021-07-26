@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 public class SiberianWellnessProductBasketTest extends SuperClass {
 
-    public static final String EXPECTED_NUMBER_OF_PRODUCTS_RESULT = "1";
+    private static final String EXPECTED_NUMBER_OF_PRODUCTS_RESULT = "1";
 
     @Test
     public void siberianWellnessProductBasketTest() {
